@@ -20,7 +20,7 @@ public class Ejercicio_01 {
         // TODO code application logic here
         PerroServicio ps=new PerroServicio();
         
-        ps.fabricarPerros();;
+        ps.fabricarPerros();
     }
     
 }

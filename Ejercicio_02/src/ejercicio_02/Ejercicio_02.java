@@ -5,6 +5,8 @@
  */
 package ejercicio_02;
 
+import Servicios.PerroServicio;
+
 /**
  *
  * @author Alejandro
@@ -16,7 +18,9 @@ public class Ejercicio_02 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("hola mundo");
+        PerroServicio ps=new PerroServicio();
+        
+        ps.fabricarPerros();
     }
     
 }

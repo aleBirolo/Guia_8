@@ -5,7 +5,10 @@
  */
 package Servicios;
 
+
+import static Utilidades.Comparadores.ordenarCadenaAsc;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -16,13 +19,18 @@ public class PerroServicio {
     
     private Scanner teclado ;
     ArrayList<String> perros;
+    Iterator<String> iterador;
     
     public void fabricarPerros(){
         
         teclado  = new Scanner(System.in).useDelimiter("\n");
         perros= new ArrayList<>();
+        
         String cad;
         String opc;
+        String perroABuscar;
+        boolean flag;
+        flag = false;
         
         opc= String.valueOf('Y');
         
@@ -42,5 +50,29 @@ public class PerroServicio {
             System.out.println(perro);
         });
         
+        System.out.print("\nIngrese una Raza de Perro a buscar: ");
+        perroABuscar= teclado.next();
+        iterador = perros.iterator();
+        while (iterador.hasNext()) {
+          
+            if (perroABuscar.equals(iterador.next())){
+                System.out.println("\nSe encontro la raza de perro en la lista. \n Se procede a eliminarla");
+                iterador.remove();
+                flag=true;
+            }
+        }
+        
+        if (!flag){
+            System.out.println("\nNo se encontro la raza de perro en la lista");
+        }
+        
+        perros.sort(ordenarCadenaAsc);
+        
+        perros.forEach((perro) -> {
+            System.out.println(perro);
+        });
     }
+    
+    
 }
+
