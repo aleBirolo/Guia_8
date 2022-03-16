@@ -55,7 +55,7 @@ public class AlumnoServicio {
             }
             
             alumnos.add(new Alumno(nom,notas));
-            
+            notas= new ArrayList<>(TAMNOTAS);
            
             System.out.print("Continue or exit? Y/N... ");
             opc= teclado.next();
@@ -84,7 +84,7 @@ public class AlumnoServicio {
     public Alumno buscarAlumno(ArrayList<Alumno> alumnos, String alum){
         
         for (Alumno alumno : alumnos) {
-            if (alumno.equals(alum))
+            if (alumno.getNombre().equals(alum))
                 return alumno;
         }
         
