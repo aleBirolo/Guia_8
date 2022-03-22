@@ -5,6 +5,10 @@
  */
 package ejercicio_05;
 
+import Entidades.Pais;
+import Servicios.PaisServicio;
+import java.util.TreeSet;
+
 /**
  *
  * @author Alejandro
@@ -16,6 +20,12 @@ public class Ejercicio_05 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        PaisServicio ps= new PaisServicio();
+        TreeSet<Pais> paises = ps.crearPaises();
+        
+        ps.mostrarPaises(paises);
+        ps.eliminarPais(paises);
+        ps.mostrarPaises(paises);
     }
     
 }
