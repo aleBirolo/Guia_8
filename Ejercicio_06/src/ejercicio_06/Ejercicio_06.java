@@ -5,6 +5,9 @@
  */
 package ejercicio_06;
 
+import Comparadores.ProductoServicio;
+import java.util.HashMap;
+
 /**
  *
  * @author Alejandro
@@ -16,6 +19,14 @@ public class Ejercicio_06 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ProductoServicio ps= new ProductoServicio() ;
+        HashMap<String, Double> productos = ps.crearProductos();
+        
+        ps.mostrarProductos(productos);
+        ps.eliminarProducto(productos);
+        ps.mostrarProductos(productos);
+        ps.cambiarPrecio(productos);
+        ps.mostrarProductos(productos);
     }
     
 }
